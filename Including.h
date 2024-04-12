@@ -1,0 +1,42 @@
+#ifndef INCLUDING_H
+#define INCLUDING_H
+
+#include <QApplication>
+#include <QWidget>
+#include <QScreen>
+#include <QRect>
+#include <QList>
+#include <QWindow>
+#include <QVideoWidget>
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include <QGraphicsBlurEffect>
+#include <QCloseEvent>
+#include <QProcess>
+#include <QScreen>
+#include<QDebug>
+#include <QTimer>
+#include <QDateTime>
+#include <thread>
+#include <QLabel>
+#include <QApplication>
+#include <QtWidgets>
+
+
+class Clock_me
+{
+public:
+    Clock_me(QWidget &widget);
+    void create_clock(QWidget &widget);
+
+    void update_clock();
+
+private:
+    QLabel *label;
+    QString TimeString;
+};
+
+
+
+#endif // INCLUDING_H
+

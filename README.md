@@ -1,1 +1,1 @@
-Thia is navbar
+This is navbar

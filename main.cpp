@@ -23,13 +23,17 @@ int main(int argc, char *argv[])
     QRect screenGeometry = screen->geometry();
 
     // Taskbar style
-      int navbar_height = screenGeometry.height() * 0.025;
+      int navbar_height = screenGeometry.height() * 0.03;
       widget.setGeometry(0, 0, screenGeometry.width(), navbar_height);
       widget.setMaximumHeight(navbar_height);
-      widget.setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+      widget.setWindowFlags(Qt::FramelessWindowHint | Qt::Tool); //Qt::WindowStaysOnTopHint
       widget.setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
       widget.setWindowOpacity(0.75);
       widget.setStyleSheet("background-color:black;");
+//      QGraphicsBlurEffect* p_blur = new QGraphicsBlurEffect;
+//      p_blur->setBlurRadius(2);
+//      p_blur->setBlurHints(QGraphicsBlurEffect::QualityHint);
+//      widget.setGraphicsEffect(p_blur);
 
       // Call a creation of the clock on task bar
         Clock_me tester(*replicant);

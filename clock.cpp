@@ -24,11 +24,11 @@ void Clock_me::create_clock(QWidget &widget)
     label->setText(TimeString);
     label->setFont(font);
     label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    label->setStyleSheet("color: white;");
-    //label->sizeHint();
-    int size = label->width()+8;
+    label->setStyleSheet("QLabel { background-color : black; color: white; border-radius: 10;}"
+                         "QLabel:hover { background-color : #595959; color: white;}");
+    int size = label->width()+20;
     int center_with_label = (screenGeometry.width() - size) / 2;
-    label->setGeometry(center_with_label, 0, size, screenGeometry.height()*0.025);
+    label->setGeometry(center_with_label, 0, size, screenGeometry.height()*0.029);
     qDebug() << TimeString;
     label->show();
 }
@@ -37,7 +37,6 @@ void Clock_me::update_clock() // Function witch update label based on current ti
 {
     QDateTime dateTime = dateTime.currentDateTime();
     TimeString = dateTime.toString("MMM dd HH:mm:ss");
-    //TimeString = QTime::currentTime().toString();
     label->setText(TimeString);
     label->show();
 }

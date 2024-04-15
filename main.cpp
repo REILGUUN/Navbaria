@@ -7,13 +7,13 @@ void Updating(Clock_me tester)
     while(true)
     {
       tester.update_clock();
-      Sleep(1000);
+      Sleep(100);
     }
 }
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
 
     QWidget widget;
     QWidget *replicant = &widget;
@@ -47,5 +47,5 @@ int main(int argc, char *argv[])
         idinaxuy.detach();
 
 
-    return a.exec();
+    return app.exec();
 }

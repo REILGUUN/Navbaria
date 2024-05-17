@@ -1,8 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Window
+import QtQuick.Controls
 
-Rectangle {
-  width: 100;
-  height: 100;
-  color: white;
 
-}

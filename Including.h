@@ -21,6 +21,22 @@
 #include <QLabel>
 #include <QApplication>
 #include <QtWidgets>
+#include <QGuiApplication>
+#include <QWindow>
+#include <windows.h>
+#include <QtWidgets>
+#include <QQuickWidget>
+#include <QQmlEngine>
+#include <QQmlApplicationEngine>
+#include <QGuiApplication>
+#include <QLabel>
+#include <QFont>
+#include <QMouseEvent>
+
+#include <QApplication>
+#include <QLabel>
+#include <QMouseEvent>
+#include <QDebug>
 
 
 class Clock_me

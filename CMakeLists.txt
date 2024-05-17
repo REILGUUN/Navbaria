@@ -9,8 +9,10 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# --------------------- Find package -----------------------------
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt REQUIRED COMPONENTS Core Gui)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -27,6 +29,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         clock.cpp
         MainQML.qml
         RobotoMono-Bold.qrc
+        Calendar.h
+        Calendar.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Linux-Navbar APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -61,10 +65,16 @@ set_target_properties(Linux-Navbar PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
+# --------------------- Including -----------------------------
+
 find_package(Qt6 REQUIRED COMPONENTS MultimediaWidgets)
 target_link_libraries(Linux-Navbar PRIVATE Qt6::MultimediaWidgets)
 find_package(Qt6 REQUIRED COMPONENTS Multimedia)
 target_link_libraries(Linux-Navbar PRIVATE Qt6::Multimedia)
+find_package(Qt6 REQUIRED COMPONENTS QuickWidgets)
+target_link_libraries(Linux-Navbar PRIVATE Qt6::QuickWidgets)
+
+# ---------------------------------------------------------------
 
 include(GNUInstallDirs)
 install(TARGETS Linux-Navbar

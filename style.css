@@ -1,0 +1,115 @@
+QCalendarWidget QTableView {
+    alternate-background-color: black;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+}
+
+/* Overall calendar styling */
+QCalendarWidget {
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white
+}
+
+/* Header with month and year */
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* Navigation buttons */
+QCalendarWidget QToolButton {
+    color: white;
+    background-color: transparent;
+    border: none;
+    icon-size: 16px, 16px;
+}
+
+/* Days of the week */
+QCalendarWidget QHeaderView {
+    background-color: transparent;
+    color: white;
+}
+
+/* Individual day cells */
+QCalendarWidget QAbstractItemView {
+    selection-color: white;
+    selection-background-color: #00C6E1;
+    color: white;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: none;
+    selection-border: none;
+}
+
+QCalendarWidget QAbstractItemView:enabled
+{
+ color: white
+}
+
+QCalendarWidget QAbstractItemView:disabled
+{
+ color: grey
+}
+
+/* Week numbers - hide them */
+QCalendarWidget QAbstractItemView:section#qt_calendar_weeknumber {
+    max-width: 0px;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+}
+
+
+/* Hide arrow to select month and year */
+QCalendarWidget QToolButton#qt_calendar_prevmonth,
+QCalendarWidget QToolButton#qt_calendar_nextmonth
+{
+    border: none;
+    qproperty-icon: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+QCalendarWidget QToolButton#qt_calendar_prevmonth
+{
+    background-image: url(:/arrow_forward_ios_left.svg);
+    margin-left: 10px;
+}
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+    background-image: url(:/arrow_forward_ios.svg);
+    margin-right: 10px;
+
+}
+/* MonthButton Change */
+QCalendarWidget QToolButton#qt_calendar_monthbutton
+{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+QCalendarWidget QToolButton::menu-indicator
+{
+    image: none;
+}
+
+/* DropDown Mwnu of month */
+QCalendarWidget QToolButton QMenu
+{
+    background-color: black;
+    font-size: 14px;
+    color: white;
+    opacity: 0.5;
+    margin: 2px;
+    border-radius: 2px;
+
+}
+
+QCalendarWidget QToolButton QMenu:hover {
+    color: white;
+}
+
+

@@ -3,8 +3,10 @@
 Clock_me::Clock_me(QWidget &widget)
 {
     label = new QLabel(&widget);
-}
+    button = new QPushButton("MMM dd HH:mm:ss", &widget);
+    QObject::connect(button, &QPushButton::clicked, this, &Clock_me::handleButton);
 
+}
 void Clock_me::create_clock(QWidget &widget)
 {
     QDateTime dateTime = dateTime.currentDateTime();
@@ -19,30 +21,27 @@ void Clock_me::create_clock(QWidget &widget)
 
 //                   LABEL                   //
 // Label setup
-    label->setText(TimeString);
-    label->setFont(font);
-    label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    label->setStyleSheet("QLabel { background-color : black; color: white; border-radius: 10;}"
-                         "QLabel:hover { background-color : #595959; color: white;}");
-    int size = label->width()+20;
+    button->setText(TimeString);
+    button->setFont(font);
+    button->setStyleSheet("QPushButton { background-color : black; color: white; border-radius: 10;}"
+                         "QPushButton:hover { background-color : #595959; color: white;}");
+    int size = button->width()+20;
     int center_with_label = (screenGeometry.width() - size) / 2;
-    label->setGeometry(center_with_label, 0, size, screenGeometry.height()*0.029);
+    button->setGeometry(center_with_label, 0, size, screenGeometry.height()*0.029);
     qDebug() << TimeString;
-
-    label->show();
+    button->show();
 }
 
+void Clock_me::handleButton() {
+    qDebug() << "Button clicked!";
+}
 
 void Clock_me::update_clock() // Function witch update label based on current time
 {
     QDateTime dateTime = dateTime.currentDateTime();
     TimeString = dateTime.toString("MMM dd HH:mm:ss");
-    label->setText(TimeString);
-    // Create an event filter
-
-    //handleLabelClick(label,QMouseEvent *event);
-
-    label->show();
+    button->setText(TimeString);
+    button->show();
 
 
 }

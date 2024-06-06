@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>RobotoMono-Bold.ttf</file>
-        <file>MainQML.qml</file>
         <file>style.css</file>
         <file>arrow_forward_ios.svg</file>
         <file>arrow_forward_ios_left.svg</file>

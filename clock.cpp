@@ -4,7 +4,7 @@ Clock_me::Clock_me(QWidget &widget)
 {
     label = new QLabel(&widget);
     button = new QPushButton("MMM dd HH:mm:ss", &widget);
-    //QObject::connect(&button, &QPushButton::clicked, this, &Clock_me::handleButton);
+    QObject::connect(button, &QPushButton::clicked, this, &Clock_me::handleButton);
 
 }
 void Clock_me::create_clock(QWidget &widget)

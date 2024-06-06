@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 //      widget.setGraphicsEffect(p_blur);
 
       // Call a creation of the clock on task bar
-        Clock_me tester(*replicant);
+      Clock_me tester(*replicant);
         tester.create_clock(*replicant);
         Calendar OCL_calendar;
         OCL_calendar.create_calendar(*replicant_calendar);

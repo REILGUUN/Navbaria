@@ -32,11 +32,11 @@
 #include <QLabel>
 #include <QFont>
 #include <QMouseEvent>
-
 #include <QApplication>
 #include <QLabel>
 #include <QMouseEvent>
-#include <QDebug>
+#include <QPushButton>
+#include <QMetaObject>
 
 
 class Clock_me
@@ -44,11 +44,13 @@ class Clock_me
 public:
     Clock_me(QWidget &widget);
     void create_clock(QWidget &widget);
-
     void update_clock();
+public slots:
+    void handleButton();
 
 private:
     QLabel *label;
+    QPushButton *button;
     QString TimeString;
 };
 

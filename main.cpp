@@ -16,8 +16,11 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QWidget widget;
+    //QObject* widget = new QObject;
+    //QWidget* widget = new QWidget;
     QWidget calendar;
-    QWidget *replicant = &widget;
+    //QWidget *replicant = &widget;
+    //QWidget bbb = &widget;
     QWidget *replicant_calendar = &calendar;
 
     QScreen *screen = QApplication::primaryScreen();
@@ -39,13 +42,13 @@ int main(int argc, char *argv[])
 //      widget.setGraphicsEffect(p_blur);
 
       // Call a creation of the clock on task bar
-      Clock_me tester(*replicant);
-        tester.create_clock(*replicant);
+      Clock_me tester(&widget);
+        tester.create_clock(widget);
         Calendar OCL_calendar;
         OCL_calendar.create_calendar(*replicant_calendar);
 
       // Call thread in infinity loop to update clock each second
-        std::thread idinaxuy (Updating, tester);
+       // std::thread idinaxuy (Updating, tester);
 
         // Create a system tray icon
         QSystemTrayIcon trayIcon(QIcon(":/_ccdff14b-7660-4960-920a-28d4f44789e0.ico"));
@@ -60,7 +63,7 @@ int main(int argc, char *argv[])
       // Show widget and do thread detached
         widget.show();
         calendar.show();
-        idinaxuy.detach();
+        //idinaxuy.detach();
         trayIcon.show();
 
 

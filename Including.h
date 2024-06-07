@@ -39,10 +39,13 @@
 #include <QMetaObject>
 
 
-class Clock_me
+class Clock_me : public QObject
 {
+    Q_OBJECT
 public:
-    Clock_me(QWidget &widget);
+
+    Clock_me(QWidget *widget = nullptr);
+
     void create_clock(QWidget &widget);
     void update_clock();
 public slots:
@@ -53,8 +56,6 @@ private:
     QPushButton *button;
     QString TimeString;
 };
-
-
 
 #endif // INCLUDING_H
 

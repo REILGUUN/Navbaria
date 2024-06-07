@@ -1,12 +1,30 @@
 #include "Including.h"
 #include "Calendar.h"
 
-void Updating(Clock_me tester)
+void Updating(Clock_me *tester, QWidget *calendar)
 {
     while(true)
     {
-      tester.update_clock();
-      Sleep(100);
+      tester->update_clock();
+      //Sleep(100);
+      //calendar->setVisible(tester->clickCheker);
+      //calendar->setHidden(tester->clickCheker);
+
+
+    }
+}
+
+void Calendar_call(QWidget calendar, Clock_me tester)
+{
+    while(true)
+    {
+      if(tester.clickCheker == true)
+      {
+          calendar.show();
+      }else
+      {
+          calendar.hide();
+      }
     }
 }
 
@@ -16,8 +34,11 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QWidget widget;
+    //QObject* widget = new QObject;
+    //QWidget* widget = new QWidget;
     QWidget calendar;
-    QWidget *replicant = &widget;
+    //QWidget *replicant = &widget;
+    //QWidget bbb = &widget;
     QWidget *replicant_calendar = &calendar;
 
     QScreen *screen = QApplication::primaryScreen();
@@ -39,13 +60,18 @@ int main(int argc, char *argv[])
 //      widget.setGraphicsEffect(p_blur);
 
       // Call a creation of the clock on task bar
-      Clock_me tester(*replicant);
-        tester.create_clock(*replicant);
-        Calendar OCL_calendar;
-        OCL_calendar.create_calendar(*replicant_calendar);
+
+
+      Calendar OCL_calendar(&calendar);
+        OCL_calendar.create_calendar();
+
+      Clock_me tester(&widget);
+        tester.create_clock(widget);
+        tester.create_link(&OCL_calendar);
 
       // Call thread in infinity loop to update clock each second
-        std::thread idinaxuy (Updating, tester);
+        std::thread updater (Updating, &tester, &calendar);
+        //std::thread click_check(Calendar_call);
 
         // Create a system tray icon
         QSystemTrayIcon trayIcon(QIcon(":/_ccdff14b-7660-4960-920a-28d4f44789e0.ico"));
@@ -59,8 +85,9 @@ int main(int argc, char *argv[])
 
       // Show widget and do thread detached
         widget.show();
-        calendar.show();
-        idinaxuy.detach();
+        updater.detach();
+        //click_check.detach();
+        calendar.hide();
         trayIcon.show();
 
 

@@ -3,11 +3,13 @@
 
 class Calendar
 {
+
 public:
-    void create_calendar(QWidget &calendar);
-
-private:
-
+    Calendar(QWidget *widget);
+    void create_calendar();
+    void show_calendar();
+    void hide_calendar();
+    QWidget *calendar;
 };
 
 #endif // CALENDAR_H

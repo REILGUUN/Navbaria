@@ -99,7 +99,7 @@ QCalendarWidget QToolButton::menu-indicator
 /* DropDown Menu of month */
 QCalendarWidget QToolButton QMenu
 {
-    background-color: transparent;
+    background-color: black;
     font-size: 14px;
     color: white;
     margin: 2px;

@@ -1,11 +1,15 @@
 #include "Including.h"
+#include "Calendar.h"
 
 Clock_me::Clock_me(QWidget *widget) : QObject(widget)
 {
-    label = new QLabel();
+    //label = new QLabel();
     button = new QPushButton("MMM dd HH:mm:ss", widget);
     QObject::connect(button, &QPushButton::clicked, this, &Clock_me::handleButton);
-    widget->setStyleSheet("background-color: transparent;");
+}
+void Clock_me::create_link(Calendar *obj)
+{
+    obj_clock = obj;
 }
 
 void Clock_me::create_clock(QWidget &widget)
@@ -24,11 +28,18 @@ void Clock_me::create_clock(QWidget &widget)
 // Label setup
     button->setText(TimeString);
     button->setFont(font);
-    //button->setFlat(true);
+    button->setFlat(true);
     button->setAttribute(Qt::WA_TranslucentBackground);
-    button->setStyleSheet("QPushButton {background-color: transparent; color: white; border-radius: 10;}"
-                         "QPushButton:hover { background-color : #595959; color: white;}");
-    int size = screenGeometry.width() * 0.105;
+    QFile file(":/styles/CSS-QML/button.style.css"); // Assuming the file is in the resources
+    if(file.open(QFile::ReadOnly)) {
+        QTextStream stream(&file);
+        QString stylesheet = stream.readAll();
+        button->setStyleSheet(stylesheet);
+        file.close();
+    }
+//    button->setStyleSheet("QPushButton {background-color:  rgba(0, 0, 0, 0);; border: 0px; color: white; border-radius: 10;}"
+//                         "QPushButton:hover { background-color: #595959; color: white;}");
+    int size = screenGeometry.width() * 0.103;
     button->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool); //Qt::WindowStaysOnTopHint
     int center_with_label = (screenGeometry.width() - size) / 2;
     button->setGeometry(center_with_label, 0, size, screenGeometry.height()*0.029);
@@ -38,6 +49,15 @@ void Clock_me::create_clock(QWidget &widget)
 
 void Clock_me::handleButton() {
     qDebug() << "Button clicked!";
+    clickCheker = !clickCheker;
+    qDebug() << clickCheker;
+    if(clickCheker)
+    {
+        obj_clock->show_calendar();
+    }else
+    {
+        obj_clock->hide_calendar();
+    }
 }
 
 void Clock_me::update_clock() // Function witch update label based on current time
@@ -47,7 +67,5 @@ void Clock_me::update_clock() // Function witch update label based on current ti
     button->setText(TimeString);
     button->show();
 
-
 }
-
 

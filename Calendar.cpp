@@ -2,27 +2,22 @@
 #include "Calendar.h"
 #include <QCalendarWidget>
 
-Calendar::Calendar(QWidget *widget)
+Calendar::Calendar(QWidget *widget) // Constructor who link outside widget to class widget
 {
     calendar = widget;
 }
 
-void Calendar::create_calendar()
+void Calendar::create_calendar() // Create a style and other property
 {
     //QWidget calendar_widget;
     QScreen *screen = QApplication::primaryScreen();
     QRect screenGeometry = screen->geometry();
 
-    calendar->setStyleSheet("background-color: black; border-radius: 15px; border: 1px;");
+    calendar->setStyleSheet("background-color: black;");
     calendar->setGeometry(screenGeometry.width() * 0.4, screenGeometry.height() * 0.05, screenGeometry.width() * 0.2, screenGeometry.height() * 0.25);
     calendar->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool); //Qt::WindowStaysOnTopHint
     calendar->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     calendar->setWindowOpacity(0.75);
-
-//    QGraphicsBlurEffect* p_blur = new QGraphicsBlurEffect;
-//    p_blur->setBlurRadius(2);
-//    p_blur->setBlurHints(QGraphicsBlurEffect::QualityHint);
-//    calendar.setGraphicsEffect(p_blur);
 
     QCalendarWidget *cll = new QCalendarWidget(calendar);
     cll->setSelectedDate(QDate::currentDate());
@@ -35,7 +30,6 @@ void Calendar::create_calendar()
         cll->setStyleSheet(stylesheet);
         file.close();
     }
-    //cll->setStyleSheet("alternate-background-color: black;");
     cll->setFixedWidth(calendar->width());
     cll->setFixedHeight(calendar->height()*1.1);
     cll->setFirstDayOfWeek(Qt::Monday);
@@ -44,7 +38,7 @@ void Calendar::create_calendar()
     cll->setWeekdayTextFormat(Qt::Saturday, weekendFormat);
     cll->setWeekdayTextFormat(Qt::Sunday, weekendFormat);
 
-    // Set front
+// Set front
     int id = QFontDatabase::addApplicationFont(":/RobotoMono-Bold.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont myfont(family);

@@ -32,6 +32,7 @@ set(PROJECT_SOURCES
         RobotoMono-Bold.qrc
         Calendar.h
         Calendar.cpp
+        Clock.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Linux-Navbar APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

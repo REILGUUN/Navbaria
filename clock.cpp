@@ -1,5 +1,6 @@
 #include "Including.h"
 #include "Calendar.h"
+#include "Clock.h"
 
 Clock_me::Clock_me(QWidget *widget) : QObject(widget)
 {

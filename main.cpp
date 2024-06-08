@@ -1,5 +1,6 @@
 #include "Including.h"
 #include "Calendar.h"
+#include "Clock.h"
 
 void Updating(Clock_me *tester, QWidget *calendar)
 {

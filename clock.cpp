@@ -2,18 +2,17 @@
 #include "Calendar.h"
 #include "Clock.h"
 
-Clock_me::Clock_me(QWidget *widget) : QObject(widget)
+Clock_me::Clock_me(QWidget *widget) : QObject(widget) // Constructer of class, who create button and connect click with slot
 {
-    //label = new QLabel();
     button = new QPushButton("MMM dd HH:mm:ss", widget);
     QObject::connect(button, &QPushButton::clicked, this, &Clock_me::handleButton);
 }
-void Clock_me::create_link(Calendar *obj)
+void Clock_me::create_link(Calendar *obj) // Linking outside other class object with private class object in this class
 {
     obj_clock = obj;
 }
 
-void Clock_me::create_clock(QWidget &widget)
+void Clock_me::create_clock(QWidget &widget) // Creating clock and make them style
 {
     QDateTime dateTime = dateTime.currentDateTime();
     TimeString = dateTime.toString("MMM dd HH:mm:ss");
@@ -25,8 +24,7 @@ void Clock_me::create_clock(QWidget &widget)
     QFont font(family);
     QFontDatabase::addApplicationFont(":/RobotoMono-Bold.ttf");
 
-//                   LABEL                   //
-// Label setup
+//                   BUTTON                   //
     button->setText(TimeString);
     button->setFont(font);
     button->setFlat(true);
@@ -38,8 +36,7 @@ void Clock_me::create_clock(QWidget &widget)
         button->setStyleSheet(stylesheet);
         file.close();
     }
-//    button->setStyleSheet("QPushButton {background-color:  rgba(0, 0, 0, 0);; border: 0px; color: white; border-radius: 10;}"
-//                         "QPushButton:hover { background-color: #595959; color: white;}");
+
     int size = screenGeometry.width() * 0.103;
     button->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool); //Qt::WindowStaysOnTopHint
     int center_with_label = (screenGeometry.width() - size) / 2;
@@ -48,10 +45,9 @@ void Clock_me::create_clock(QWidget &widget)
     button->show();
 }
 
-void Clock_me::handleButton() {
-    qDebug() << "Button clicked!";
+void Clock_me::handleButton() // Function who called when click on button and show the calendar or hide
+{
     clickCheker = !clickCheker;
-    qDebug() << clickCheker;
     if(clickCheker)
     {
         obj_clock->show_calendar();

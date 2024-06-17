@@ -76,11 +76,11 @@ QCalendarWidget QToolButton#qt_calendar_nextmonth
 
 QCalendarWidget QToolButton#qt_calendar_prevmonth
 {
-    background-image: url(:/arrow_forward_ios_left.svg);
+    background-image: url(:/Icons/styles/Icons/arrow_forward_ios_left.svg);
     margin-left: 10px;
 }
 QCalendarWidget QToolButton#qt_calendar_nextmonth {
-    background-image: url(:/arrow_forward_ios.svg);
+    background-image: url(:/Icons/styles/Icons/arrow_forward_ios.svg);
     margin-right: 10px;
 
 }

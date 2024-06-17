@@ -19,17 +19,17 @@ void Clock_me::create_clock(QWidget &widget) // Creating clock and make them sty
     QScreen *screen = QApplication::primaryScreen();
     QRect screenGeometry = screen->geometry();
 
-    int id = QFontDatabase::addApplicationFont(":/RobotoMono-Bold.ttf");
+    int id = QFontDatabase::addApplicationFont(":/Fronts/styles/Fronts/RobotoMono-Bold.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont font(family);
-    QFontDatabase::addApplicationFont(":/RobotoMono-Bold.ttf");
+    QFontDatabase::addApplicationFont(":/Fronts/styles/Fronts/RobotoMono-Bold.ttf");
 
 //                   BUTTON                   //
     button->setText(TimeString);
     button->setFont(font);
     button->setFlat(true);
     button->setAttribute(Qt::WA_TranslucentBackground);
-    QFile file(":/styles/CSS-QML/button.style.css"); // Assuming the file is in the resources
+    QFile file(":/Styles/styles/CSS-QML/button.style.css"); // Assuming the file is in the resources
     if(file.open(QFile::ReadOnly)) {
         QTextStream stream(&file);
         QString stylesheet = stream.readAll();

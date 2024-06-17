@@ -23,7 +23,7 @@ void Calendar::create_calendar() // Create a style and other property
     cll->setSelectedDate(QDate::currentDate());
     cll->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
 
-    QFile file(":/style.css"); // Assuming the file is in the resources
+    QFile file(":/Styles/styles/CSS-QML/style.css"); // Assuming the file is in the resources
     if(file.open(QFile::ReadOnly)) {
         QTextStream stream(&file);
         QString stylesheet = stream.readAll();
@@ -39,7 +39,7 @@ void Calendar::create_calendar() // Create a style and other property
     cll->setWeekdayTextFormat(Qt::Sunday, weekendFormat);
 
 // Set front
-    int id = QFontDatabase::addApplicationFont(":/RobotoMono-Bold.ttf");
+    int id = QFontDatabase::addApplicationFont(":/Fronts/styles/Fronts/RobotoMono-Bold.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont myfont(family);
     cll->setFont(myfont);

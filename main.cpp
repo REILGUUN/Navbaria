@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
         std::thread updater (Updating, &tester);
 
 // Create a system tray icon
-        QSystemTrayIcon trayIcon(QIcon(":/_ccdff14b-7660-4960-920a-28d4f44789e0.ico"));
+        QSystemTrayIcon trayIcon(QIcon(":/Icons/styles/Icons/_ccdff14b-7660-4960-920a-28d4f44789e0.ico"));
         trayIcon.setToolTip("Linux Navbar"); // Set the tooltip text
 
 // Create a context menu for the system tray icon

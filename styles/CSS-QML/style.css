@@ -1,5 +1,5 @@
 QCalendarWidget QTableView {
-    alternate-background-color: black;
+    alternate-background-color: transparent;
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 15px;
@@ -12,6 +12,7 @@ QCalendarWidget {
     color: white
 }
 
+
 /* Header with month and year */
 QCalendarWidget QWidget#qt_calendar_navigationbar {
     background-color: transparent;
@@ -22,9 +23,10 @@ QCalendarWidget QWidget#qt_calendar_navigationbar {
 
 /* Navigation buttons */
 QCalendarWidget QToolButton {
-    color: white;
+
     background-color: transparent;
     border: none;
+    margin: 3px;
     icon-size: 16px, 16px;
 }
 
@@ -47,13 +49,10 @@ QCalendarWidget QAbstractItemView {
 
 QCalendarWidget QAbstractItemView:enabled
 {
- color: white
+    color: white;
 }
 
-QCalendarWidget QAbstractItemView:disabled
-{
- color: grey
-}
+
 
 /* Week numbers - hide them */
 QCalendarWidget QAbstractItemView:section#qt_calendar_weeknumber {
@@ -76,11 +75,11 @@ QCalendarWidget QToolButton#qt_calendar_nextmonth
 
 QCalendarWidget QToolButton#qt_calendar_prevmonth
 {
-    background-image: url(:/arrow_forward_ios_left.svg);
+    background-image: url(:/Icons/styles/Icons/arrow_forward_ios_left.svg);
     margin-left: 10px;
 }
 QCalendarWidget QToolButton#qt_calendar_nextmonth {
-    background-image: url(:/arrow_forward_ios.svg);
+    background-image: url(:/Icons/styles/Icons/arrow_forward_ios.svg);
     margin-right: 10px;
 
 }
@@ -91,15 +90,22 @@ QCalendarWidget QToolButton#qt_calendar_monthbutton
     margin-bottom: 6px;
 }
 
+#qt_calendar_yearedit
+{
+    width: 90px;
+
+}
+
+
 QCalendarWidget QToolButton::menu-indicator
 {
     image: none;
 }
 
 /* DropDown Menu of month */
-QCalendarWidget QToolButton QMenu
+QCalendarWidget QMenu
 {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);;
     font-size: 14px;
     color: white;
     margin: 2px;
@@ -107,8 +113,9 @@ QCalendarWidget QToolButton QMenu
 
 }
 
-QCalendarWidget QToolButton QMenu:hover {
-    color: white;
+QCalendarWidget QMenu:hover
+{
+  background-color: rgba(100, 100, 100, 0.5);;
 }
 
 

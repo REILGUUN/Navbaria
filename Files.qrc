@@ -3,11 +3,16 @@
         <file>styles/CSS-QML/button.style.css</file>
         <file>styles/CSS-QML/button.style.txt</file>
         <file>styles/CSS-QML/style.css</file>
+        <file>styles/CSS-QML/main_button.css</file>
+        <file>styles/Icons/power_settings_new.ico</file>
     </qresource>
     <qresource prefix="/Icons">
         <file>styles/Icons/_ccdff14b-7660-4960-920a-28d4f44789e0.ico</file>
         <file>styles/Icons/arrow_forward_ios.svg</file>
         <file>styles/Icons/arrow_forward_ios_left.svg</file>
+        <file>styles/Icons/volume_up.svg</file>
+        <file>styles/Icons/power_settings_new.svg</file>
+        <file>styles/Icons/bluetooth.svg</file>
     </qresource>
     <qresource prefix="/Fronts">
         <file>styles/Fronts/RobotoMono-Bold.ttf</file>

@@ -1,6 +1,7 @@
 #include "Including.h"
 #include "Calendar.h"
 #include "Clock.h"
+#include "PC_Menu.h"
 
 void Updating(Clock_me *tester) // Function to update clock
 {
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
       widget.setMaximumHeight(navbar_height);
       widget.setWindowFlags(Qt::FramelessWindowHint | Qt::Tool); //Qt::WindowStaysOnTopHint
       widget.setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-      widget.setWindowOpacity(0.75);
+      widget.setWindowOpacity(0.7);
       widget.setStyleSheet("background-color:black;");
 
 // Create a class object who will caling after
@@ -34,6 +35,7 @@ int main(int argc, char *argv[])
         OCL_calendar.create_calendar();
 
       Clock_me tester(&widget);
+        Navbaria_Menu zhora(&widget);
         tester.create_clock(widget);
         tester.create_link(&OCL_calendar);
 

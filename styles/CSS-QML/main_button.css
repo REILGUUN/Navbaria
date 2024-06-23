@@ -1,0 +1,24 @@
+QPushButton
+{
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    border-radius: 10;
+ }
+
+QPushButton:hover
+{
+    background-color: #595959;
+    color: white;
+}
+
+QPushButton:disabled {
+
+   qproperty-icon: url(:/Icons/styles/Icons/bluetooth.svg);
+}
+
+QPushButton:checked {
+
+    qproperty-icon: url(:/Icons/styles/Icons/power_settings_new.svg);
+
+}

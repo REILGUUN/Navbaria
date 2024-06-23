@@ -37,7 +37,10 @@
 #include <QMouseEvent>
 #include <QPushButton>
 #include <QMetaObject>
-#include "Calendar.h"
+#include <QtSvgWidgets/QSvgWidget>
+
+
+
 
 
 #endif // INCLUDING_H

@@ -53,7 +53,6 @@ QCalendarWidget QAbstractItemView:enabled
 }
 
 
-
 /* Week numbers - hide them */
 QCalendarWidget QAbstractItemView:section#qt_calendar_weeknumber {
     max-width: 0px;

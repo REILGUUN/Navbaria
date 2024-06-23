@@ -33,6 +33,9 @@ set(PROJECT_SOURCES
         Calendar.cpp
         Clock.h
         Files.qrc
+        PC_Menu.h
+        pc_menu.h pc_menu.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Linux-Navbar APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

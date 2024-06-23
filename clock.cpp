@@ -1,6 +1,7 @@
 #include "Including.h"
 #include "Calendar.h"
 #include "Clock.h"
+#include "PC_Menu.h"
 
 Clock_me::Clock_me(QWidget *widget) : QObject(widget) // Constructer of class, who create button and connect click with slot
 {

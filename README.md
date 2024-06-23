@@ -16,7 +16,7 @@ Project aim create Navbar like on photo with control panel and music widged, cal
 
 On last mearge navbar have time and calendar with icon in tool bar. After finishing function on click show calendar and hide. I will upload alpha version on GitHub and in Realese .exe
 
-https://github.com/REILGUUN/Navbaria/assets/138314516/a96501c5-a9cf-4ad8-9135-ece5828f1dd9
+https://github.com/REILGUUN/Navbaria/assets/138314516/2af0b0f4-acda-4968-a7d3-ea6ef34cfecc
 
 
 

@@ -12,13 +12,3 @@ QPushButton:hover
     color: white;
 }
 
-QPushButton:disabled {
-
-   qproperty-icon: url(:/Icons/styles/Icons/bluetooth.svg);
-}
-
-QPushButton:checked {
-
-    qproperty-icon: url(:/Icons/styles/Icons/power_settings_new.svg);
-
-}

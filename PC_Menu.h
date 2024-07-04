@@ -8,8 +8,15 @@ class Navbaria_Menu : public QObject
 public:
 
     Navbaria_Menu(QWidget *widget = nullptr);
+    void Call_widget();
+
+public slots:
+    void clickButton();
+
 private:
     QPushButton *main_button;
+    QWidget *WMenu;
+    bool clickCheker = false;
 };
 
 #endif // PC_MENU_H
